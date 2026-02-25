@@ -1,0 +1,263 @@
+   <style>
+        body {
+            margin: 0;
+            font-family: 'Lora', serif;
+            background: #eef1f5;
+            color: #1f2937;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Colonne gauche */
+        .sidebar {
+            width: 32%;
+            background: linear-gradient(180deg, #1f2937, #111827);
+            color: white;
+            padding: 40px 30px;
+        }
+
+        .photo {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .sidebar h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 6px;
+        }
+
+        .sidebar p,
+        .sidebar li {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .sidebar ul {
+            padding-left: 18px;
+        }
+
+        /* Colonne droite */
+        .content {
+            width: 68%;
+            padding: 50px 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            color: #374151;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        /* Bouton CTA */
+        .cta {
+            display: inline-block;
+            margin: 15px 0 35px 0;
+            padding: 12px 22px;
+            background: #1f2937;
+            color: white;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            border-radius: 6px;
+            transition: 0.2s;
+            font-weight: 500;
+        }
+
+        .cta:hover {
+            background: #0f172a;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #1f2937;
+            display: inline-block;
+            padding-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .experience-item {
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 900px) {
+
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .content {
+                width: 100%;
+                padding: 30px 20px;
+            }
+
+            /* Photo responsive + centrée */
+            .photo {
+                width: 60%;
+                margin: 0 auto 25px auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                aspect-ratio: 1 / 1;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            .photo img {
+                width: 80%;
+                height: 80%;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            /* Titres plus petits sur mobile */
+            h1 {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .section h2 {
+                font-size: 20px;
+            }
+
+            .section {
+                width: 95%;
+            }
+        }
+
+        @media print {
+
+            /* Force l’impression des couleurs */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* Format de page */
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            html,
+            body {
+                width: 210mm;
+                height: 297mm;
+                margin: 0 !important;
+                padding: 0 !important;
+                background: white !important;
+            }
+
+            /* Layout desktop forcé */
+            .container {
+                display: flex !important;
+                flex-direction: row !important;
+                width: 210mm !important;
+                height: 297mm !important;
+                max-width: 210mm !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+            }
+
+            .sidebar {
+                width: 32% !important;
+                padding: 40px 30px !important;
+                text-align: left !important;
+                background: linear-gradient(180deg, #1f2937, #111827) !important;
+                color: white !important;
+            }
+
+            .content {
+                width: 68% !important;
+                padding: 50px 60px !important;
+            }
+
+            /* Photo */
+            .photo {
+                width: 100% !important;
+                margin-bottom: 20px !important;
+                aspect-ratio: auto !important;
+            }
+
+            .photo img {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: cover !important;
+            }
+
+            /* Typo ajustée print */
+            h1 {
+                font-size: 32px !important;
+            }
+
+            h2 {
+                font-size: 20px !important;
+            }
+
+            p,
+            li {
+                font-size: 13px !important;
+                line-height: 1.6 !important;
+            }
+
+            /* Éléments inutiles à l’impression */
+            .cta {
+                display: none !important;
+            }
+
+            /* Évite les coupures dégueu */
+            .section,
+            .experience-item,
+            .sidebar,
+            .content {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
